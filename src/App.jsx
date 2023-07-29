@@ -12,6 +12,7 @@ import  Planes  from './components/Planes'
 import { Usuarios } from './components/Usuario'
 import { useState, useEffect } from 'react'
 import TermsAndConditions from './components/TerminosYCondiciones'
+import { EditUsuario } from './components/EditUsuario'
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
       <Route path='/planes' element ={<Planes />}></Route>
       <Route path='/usuario' element={<Usuarios/>}></Route>
       <Route path='/terms' element={<TermsAndConditions/>}></Route>
+      {/* <Route path='/edit_clientes' element={<EditUsuario/>}></Route> */}
       </Routes>
     </>
 

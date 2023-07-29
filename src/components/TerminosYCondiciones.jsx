@@ -108,6 +108,15 @@ Los usuarios deben utilizar la plataforma de manera adecuada y cumplir con todas
 8.2. 
 El Propietario de la Web se reserva el derecho de suspender, cancelar o tomar medidas legales contra cualquier usuario que incumpla los términos y condiciones o realice actividades ilegales o fraudulentas en su plataforma.
 
+9.- Patrocinio de Publicaciones.
+Los Usuarios registrados podrán comunicarse de manera privada por otros medios externos a la web para pedir el patrocinio de las publicaciones de sus planes.
+El tiempo de las publicaciones regulares sin patrocinio es de 7 dias corridos, el de las publicaciones patrocinadas es de 30 dias corridos.
+Una vez transcurrido ese tiempo las publicaciones se darán de baja automaticamente.
+El precio del patrocinio lo da el propietario de la web en negociacion privada con cada usuario particularmente.
+En este sitio web no hay transferencias de dinero de ningun tipo.
+
+
+
   `;
 
   return (

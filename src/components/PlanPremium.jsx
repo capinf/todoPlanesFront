@@ -29,8 +29,8 @@ export function PlanPremium () {
             <p className='infos'>Localidad: {plan.localidad}</p>
             <p className='infos'>Año de Inicio: {plan.anioInicio}</p>
             <p className='infos'>{plan.telefono}</p>
-            <button className='buttoncito'><img src="/img/buttoncito.png" alt="boton de contacto" width="100px" height="100px" /></button>
-            <button className='whatsapplogo'><img src="/img/whatsappfree.png" alt="" width="100px" height="100px" /></button>
+            {/* <button className='buttoncito'><img src="/img/buttoncito.png" alt="boton de contacto" width="100px" height="100px" /></button>
+            <button className='whatsapplogo'><img src="/img/whatsappfree.png" alt="" width="100px" height="100px" /></button> */}
             </div>
             </li>
         ))

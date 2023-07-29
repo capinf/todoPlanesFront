@@ -27,21 +27,28 @@ const Planes = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://www.autosencuotas.com.ar/hotsale/img/hotweek/autoplan-peugeot-208-active-5-puertas-plan-ahorro-100-porciento-financiado.jpg"
-          alt="Imagen 1"
+          src="/img/infoplanes.svg"
+          alt="https://www.freepik.es/vector-gratis/modern-blue-urban-adventure-suv-vehicle-illustration_1361484.htm#query=autos&position=40&from_view=search&track=sph"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://www.autosencuotas.com.ar/img/slider/index/bn-4.jpg"
+          src="/img/infoplanes2.svg"
           alt="Imagen 2"
         />
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://www.autosencuotas.com.ar/img/slider/index/inverti-en-planes-planes-a-la-venta-oferta.jpg"
+          src="/img/infoplanes3.svg"
+          alt="Imagen 3"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/img/infoplanes4.svg"
           alt="Imagen 3"
         />
       </Carousel.Item>

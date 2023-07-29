@@ -20,12 +20,11 @@ export function NavBarTestMain () {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link style={{color:"white"}} href='/'>Inicio</Nav.Link>
-          <Nav.Link style={{color:"aquamarine"}} href="#">Planes Avanzados</Nav.Link>
+          <Nav.Link style={{color:"aquamarine"}} href="/planes">Planes Avanzados</Nav.Link>
           {/* <Nav.Link style={{color:"white"}} href="#">Adjudicados</Nav.Link> */}
-          <Nav.Link style={{color:"aquamarine"}} href="#">¡Quiero vender mi plan!</Nav.Link>
+          <Nav.Link style={{color:"aquamarine"}} href="/cargaPlan">¡Quiero vender mi plan!</Nav.Link>
           <Nav.Link style={{color:"white"}} href="/cargaAutos">¡Subí tu auto!</Nav.Link>
           <Nav.Link style={{color:"aquamarine"}} href="/usuario">Usuarios</Nav.Link>
-          {/* <Link to = {'/usuario'}>Usuarios</Link> */}
         </Nav>
       </Navbar.Collapse>
             <div className="logo">

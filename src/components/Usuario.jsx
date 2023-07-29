@@ -102,8 +102,8 @@ export function Usuarios(){
                     </thead>
                     <tbody>
                         {usuario.map((usuarios)=>(
-                        <tr  key={usuario.id}>
-                            <td scope="row">{usuario.id}</td>
+                        <tr  key={usuarios.id}>
+                            <td scope="row">{usuarios.id}</td>
                             <td>{usuarios.username}</td>
                             <td>{usuarios.apellido_nombre}</td>
                             <td>{usuarios.telefono}</td>
@@ -122,7 +122,7 @@ export function Usuarios(){
 
                                
                                 <button onClick={() => bajaUsuario(usuarios.id,'B')} type="button" className="btn btn-outline-danger">Baja</button>
-                                <Link name="" id="" className="btn btn-outline-secondary" to={`/edit_clientes/${usuarios.idClientes}`} role="button">Editar </Link>
+                                <Link name="" id="" className="btn btn-outline-secondary" to={`/edit_clientes/${usuarios.id}`} role="button">Editar </Link>
                                 </>
                             }
 
