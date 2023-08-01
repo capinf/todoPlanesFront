@@ -9,10 +9,10 @@ import { Login } from './components/Login'
 import { CargaPlan } from './components/QuieroVenderMiPlan'
 import { Adjudicados } from './components/Adjudicados'
 import  Planes  from './components/Planes'
-import { Usuarios } from './components/Usuario'
 import { useState, useEffect } from 'react'
 import TermsAndConditions from './components/TerminosYCondiciones'
-import { EditUsuario } from './components/EditUsuario'
+import { Usuarios } from './components/endpoints/edits'
+import { EditUsuario } from './components/endpoints/EditUsuario'
 
 function App() {
 
@@ -52,9 +52,9 @@ function App() {
       <Route path='/cargaPlan' element ={<CargaPlan/>}></Route>
       <Route path='/adjudicados' element ={<Adjudicados/>}></Route>
       <Route path='/planes' element ={<Planes />}></Route>
-      <Route path='/usuario' element={<Usuarios/>}></Route>
       <Route path='/terms' element={<TermsAndConditions/>}></Route>
-      {/* <Route path='/edit_clientes' element={<EditUsuario/>}></Route> */}
+      <Route path='/usuario' element={<Usuarios/>}></Route>
+      <Route path='/edit_usuarios/:id' element={<EditUsuario/>}></Route>
       </Routes>
     </>
 
