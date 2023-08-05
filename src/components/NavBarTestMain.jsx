@@ -13,6 +13,8 @@ export function NavBarTestMain () {
             window.location.reload(true);
         }
 
+        setTimeout(Logout, 1200000);
+
     return (
         <>
     <Navbar className="barra" variant="dark" expand="lg">

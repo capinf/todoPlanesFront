@@ -6,6 +6,8 @@ import  {cargarFormulario}  from '../servicios/servicios';
 
 export function CargaAutos () {
 
+  const [mensajeError, setmensajeError] = useState('')
+  const [MensajeSucces, setMensajeSucces] = useState('')
   const rolform = JSON.parse(localStorage.getItem('saveRol'))
 
   const [formData, setFormData] = useState({
@@ -41,8 +43,30 @@ export function CargaAutos () {
     e.preventDefault();
     console.log('handlesubmit consolelog ',formData);
     try {
-      const response = await cargarFormulario(formData);
-      console.log('Datos enviados al backend:', response);
+      if (formData.nombrePlan !=''&&
+          formData.anioInicio !=''&&
+          formData.cantidadCuotas !=''&&
+          formData.localidad !=''&&
+          formData.precio !=''&&
+          formData.rolform == rolform&&
+          formData.tipoPlan !=''&&
+          formData.telefono !=''&&
+          formData.adjudicado !='') {
+        
+        const response = await cargarFormulario(formData);
+        console.log('Datos enviados al backend:', response);
+        setMensajeSucces('Se cargo el formulario correctamente')
+        setTimeout(()=>{
+            setmensajeError('')
+            window.location.reload(true);
+        }, 3000)
+
+      } else{
+        setmensajeError('Por favor completa todos los campos')
+            setTimeout(()=>{
+                setmensajeError('')
+            }, 3000)
+      }
 
       // Reiniciar los valores de los campos después de enviar
       setFormData({
@@ -60,11 +84,23 @@ export function CargaAutos () {
     } catch (error) {
       console.error('Error al enviar datos al backend:', error);
     }
-    window.location.reload(true);
+
     // Aquí puedes realizar las acciones necesarias con los datos del formulario
   };
     return (
         <>
+        {
+          mensajeError?
+          <div className="alert alert-warning" role="alert">
+           {mensajeError}
+          </div>:''
+        }
+                {
+          MensajeSucces?
+          <div className="alert alert-warning" role="alert">
+           {MensajeSucces}
+          </div>:''
+        }
        <form action="">
   <div className="container" >
     <div className="row justify-content-center" id="form">
@@ -88,6 +124,7 @@ export function CargaAutos () {
           <div className="form-group">
           <label htmlFor="tipoPlan" className="text">
             <select
+              placeholder='Seleccione tipo de plan'
               required
               type="text"
               className="form-control"
@@ -96,6 +133,7 @@ export function CargaAutos () {
               value={formData.tipoPlan}
               onChange={handleChange}
               >
+              <option value="">-</option>
               <option value="100%">100%</option>
               <option value="80% - 20%">80% - 20%</option>
               <option value="70% - 30%">70% - 30%</option>
@@ -131,6 +169,7 @@ export function CargaAutos () {
           <div className="form-group">
           <label htmlFor="adjudicado" className="text">
             <select
+              placeholder=''
               required
               type="text"
               className="form-control"
@@ -139,6 +178,7 @@ export function CargaAutos () {
               value={formData.adjudicado}
               onChange={handleChange}
               >
+              <option value="">-</option>
               <option value="SI">SI</option>
               <option value="NO">NO</option>
             </select>

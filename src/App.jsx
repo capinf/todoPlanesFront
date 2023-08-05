@@ -26,8 +26,6 @@ function App() {
           if(sesionLogeada){
             setSesion(sesionLogeada)
             setUser(userRol)
-            console.log('sesion logeada', sesionLogeada)
-            console.log('Rol ', userRol)
           }  
         },[])
 

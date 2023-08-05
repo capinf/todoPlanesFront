@@ -11,6 +11,7 @@ export function Login () {
 	const [password, setPassword] = useState('');
 	const [sesion, setSesion] = useState('');
 	const [MensajeError, setMensajeError] = useState('');
+	const [MensajeSucces, setMensajeSucces] = useState('');
 
 		const send_form = async(event)=>{
 
@@ -20,20 +21,20 @@ export function Login () {
 		const campos = usuario.datos[0]
 		//filtro el rol//
 		const rol = campos.rol
-		console.log(usuario.datos)
-		console.log('guardo correctamente el rol: ',rol)
 		
 		if(usuario.status){
 			console.log('se logeo correctamente')
 			window.localStorage.setItem('saveUsuario', JSON.stringify(usuario));
 			window.localStorage.setItem('saveRol', JSON.stringify(rol));
 			window.localStorage.setItem('token', JSON.stringify(usuario.token));
-			console.log('aca tengo el token:', (window.localStorage.getItem('token')))
-			console.log('aca tengo el rol:', (window.localStorage.getItem('saveRol')))
 			setSesion(sesion)
 			setUser('')
 			setPassword('')
-			window.location.href = '/';
+			setMensajeSucces('Inició sesion correctamente')
+			setTimeout(()=>{
+				setMensajeSucces('')
+				window.location.href = '/';
+			}, 2000)
 		}else{
 			setMensajeError(usuario.mensaje)
 			setTimeout(()=>{
@@ -77,7 +78,6 @@ export function Login () {
 			if(textInput2===textInput3){
 			console.log(enviarInputText)
 			API.Registro(enviarInputText);
-			console.log('llega hasta aca')
 			setMsjSuccess('Se creó el usuario correctamente')
 			setTimeout(()=>{
 				setMsjSuccess('');
@@ -128,7 +128,6 @@ export function Login () {
 			 {MensajeError}
 			</div>
 			:('')
-
 		}
 
 		{
@@ -140,6 +139,12 @@ export function Login () {
         {
           MsjSuccess?
           <div className="alert alert-success" role="alert">{MsjSuccess}</div>
+          :''
+        }
+
+		{
+          MensajeSucces?
+          <div className="alert alert-success" role="alert">{MensajeSucces}</div>
           :''
         }
 
