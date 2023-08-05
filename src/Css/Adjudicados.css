@@ -1,0 +1,28 @@
+.adjudicados-table {
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.imagen-table {
+    width: 100%;
+    height: 100%;
+}
+
+.imgcontainer {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.info{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    transform: translateY(30%);
+}
+
+.column-adjudicados {
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+
