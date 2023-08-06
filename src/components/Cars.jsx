@@ -1,15 +1,5 @@
 import '../Css/GridAutos.css'
 
-// id: car.idFormulario,
-// title: car.nombrePlan,
-// precio: car.precio,
-// cuotas: car.cantidadCuotas,
-// adjudicado: car.adjudicado,
-// anio: car.anioInicio,
-// localidad: car.localidad,
-// telefono: car.telefono,
-// img: car.imgPath
-
 function ListOfCars ({cars}) {
 
     return (

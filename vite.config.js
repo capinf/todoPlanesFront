@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/uploads': 'http://localhost:3000'  // Cambia la URL del servidor backend si es diferente
+      '/uploads': 'https://todoplanesback.onrender.com'  // Cambia la URL del servidor backend si es diferente
     }
   }
 })
