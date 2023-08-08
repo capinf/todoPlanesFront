@@ -14,6 +14,7 @@ export function NavBar () {
         <Nav className="mr-auto">
           <Nav.Link style={{color:"white"}} href='/'>Inicio</Nav.Link>
           <Nav.Link style={{color:"aquamarine"}} href="/planes">Planes Avanzados</Nav.Link>
+          <Nav.Link style={{color:"aquamarine"}} href="/cargaPlan">¡Quiero vender mi plan!</Nav.Link>
         </Nav>
       </Navbar.Collapse>
             <div className="logo">
