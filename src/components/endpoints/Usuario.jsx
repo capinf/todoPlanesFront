@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
-import * as API from '../servicios/servicios.js'
+import * as API from '../../servicios/servicios'
 // import { EditClientes } from './EditUsuario'
 
 export function Usuarios(){
