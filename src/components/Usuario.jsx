@@ -25,7 +25,6 @@ export function Usuarios(){
     //BOTONES//
 
     const bajaUsuario  = async(id)=>{
-        console.log('el id que vamos a dar de baja es el',id)
 
         const user = await API.bajaUsuario(id)
         if(user.status){
