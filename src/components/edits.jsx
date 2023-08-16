@@ -265,7 +265,7 @@ export function Usuarios(){
 
                                
                                 <button onClick={() => bajaUsuario(usuarios.username,'B')} type="button" className="btn btn-outline-danger">Baja</button>
-                                <Link name="" id="" className="btn btn-outline-secondary" to={`/edit_clientes/${clientes.idClientes}`} role="button">Editar </Link>
+                                <Link name="" id="" className="btn btn-outline-secondary" to={`/edit_clientes/${usuarios.username}`} role="button">Editar </Link>
                                 </>
                             }
 
