@@ -1,15 +1,5 @@
 import '../Css/GridAutos.css'
 
-// id: car.idFormulario,
-// title: car.nombrePlan,
-// precio: car.precio,
-// cuotas: car.cantidadCuotas,
-// adjudicado: car.adjudicado,
-// anio: car.anioInicio,
-// localidad: car.localidad,
-// telefono: car.telefono,
-// img: car.imgPath
-
 function ListOfCars ({cars}) {
 
     return (
@@ -21,7 +11,7 @@ function ListOfCars ({cars}) {
         cars.map(car =>(
 
             <li className='card-list' key={car.id}>
-            <img className='card-image' src={`/${car.img}`} alt="" />
+            <img className='card-image' src={car.img} alt="" />
             <h1 className='title'>{car.title}</h1>
             <div className="card-details">
             <p className='infos'>Tipo de Plan: {car.tipoPlan}</p>

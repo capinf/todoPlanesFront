@@ -19,7 +19,7 @@ export function PlanPremium () {
         planesPremium.map(plan =>(
 
             <li className='card-list' key={plan.id}>
-            <img className='card-image' src={`/${plan.imgPath}`}alt="" />
+            <img className='card-image' src={plan.imgPath}alt="" />
             <h1 className='title'>{plan.nombrePlan}</h1>
             <div className="card-details">
             <p className='infos'>Tipo de Plan: {plan.tipoPlan}</p>
