@@ -40,7 +40,7 @@ export function CargaPlan() {
   </div>
 
   <div className="contacto-clientemain-gmail-com">
-    Contacto: clientemain@gmail.com
+    Contacto: todoplanesar@gmail.com
   </div>
 
   </div>
