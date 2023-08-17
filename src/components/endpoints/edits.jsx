@@ -27,7 +27,7 @@ export function Usuarios(){
     const bajaUsuario  = async(id)=>{
         console.log('el usuario que vamos a dar de baja es el',username)
 
-        const user = await API.BajaUsuario(id)
+        const user = await API.bajaUsuario(id)
         if(user.status){
             
             setmensajeError(user.mensaje)
@@ -45,7 +45,7 @@ export function Usuarios(){
     }
 
     const altaUsuario = async(id)=>{
-        const user = await API.AltaUsuario(id)
+        const user = await API.altaUsuario(id)
         if(user.status){
             setmensajeSuccess(user.mensaje)
             setTimeout(()=>{
