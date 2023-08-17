@@ -25,7 +25,6 @@ export function Usuarios(){
     //BOTONES//
 
     const bajaUsuario  = async(id)=>{
-        console.log('el usuario que vamos a dar de baja es el',username)
 
         const user = await API.bajaUsuario(id)
         if(user.status){
@@ -92,32 +91,37 @@ export function Usuarios(){
                 <table className="table text-white">
                     <thead>
                         <tr>
+                            <th scope="col">Id</th>
                             <th scope="col">Username</th>
                             <th scope="col">Apellido y Nombre</th>
                             <th scope="col">Telefono</th>
-                            <th scope="col">Acciones</th>
                             <th scope="col">Estado</th>
+                            <th scope="col">Rol</th>
                         </tr>
                     </thead>
                     <tbody>
                         {usuario.map((usuarios)=>(
                         <tr  key={usuarios.id}>
-                            <td scope="row">{usuarios.username}</td>
+                            <td scope="row">{usuarios.id}</td>
                             <td>{usuarios.username}</td>
                             <td>{usuarios.apellido_nombre}</td>
                             <td>{usuarios.telefono}</td>
+                            <td>{usuarios.estado}</td>
+                            <td>{usuarios.rol}</td>
+
+
                             <td>{usuarios.estado=='A'?'Activo':'Baja'}</td>
                             <td>
                             <div className="btn-group" role="group" aria-label="Basic example">
                             { (usuarios.estado=='B')? 
 
-                                <button onClick={() =>altaUsuario(usuarios.username,'A')} type="button" className="btn btn-outline-primary">Alta</button>
+                                <button onClick={() =>altaUsuario(usuarios.id,'A')} type="button" className="btn btn-outline-primary">Alta</button>
                                 :
                                 <>
 
                                
-                                <button onClick={() => bajaUsuario(usuarios.username,'B')} type="button" className="btn btn-outline-danger">Baja</button>
-                                <Link name="" id="" className="btn btn-outline-secondary" to={`/edit_usuarios/${usuarios.id}`} role="button">Editar </Link>
+                                <button onClick={() => bajaUsuario(usuarios.id,'B')} type="button" className="btn btn-outline-danger">Baja</button>
+                                <Link name="" id="" className="btn btn-outline-secondary" to={`/edit_clientes/${usuarios.id}`} role="button">Editar </Link>
                                 </>
                             }
 
