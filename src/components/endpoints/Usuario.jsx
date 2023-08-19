@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import * as API from '../../servicios/servicios'
-// import { EditClientes } from './EditUsuario'
+//import { EditUsuario } from './EditUsuario'
 
 export function Usuarios(){
 
@@ -123,7 +123,7 @@ export function Usuarios(){
 
                                
                                 <button onClick={() => bajaUsuario(usuarios.id,'B')} type="button" className="btn btn-outline-danger">Baja</button>
-                                <Link name="" id="" className="btn btn-outline-secondary" to={`/edit_usuario/${usuarios.id}`} role="button">Editar </Link>
+                                <Link name="" id="" className="btn btn-outline-secondary" to={`/edit_usuarios/${usuarios.id}`} role="button">Editar </Link>
                                 </>
                             }
 
