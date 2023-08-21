@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 #titulazo {
+	font-family: "Verdana";
 	font-weight: bold;
 	margin: 0;
 }
 
 h2 {
+	font-family: "Verdana";
 	text-align: center;
 }
 
 #parrafazo {
+	font-family: "Verdana";
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
@@ -18,6 +20,7 @@ h2 {
 }
 
 #Zelda {
+	font-family: "Verdana";
 	color: #333;
 	font-size: 14px;
 	text-decoration: none;
@@ -25,6 +28,7 @@ h2 {
 }
 
 #luisbutton {
+	font-family: "Verdana";
 	border-radius: 20px;
 	border: 1px solid #20D392;
 	background-color: #20D392;
@@ -51,6 +55,7 @@ h2 {
 }
 
 #signUp {
+	font-family: "Verdana";
     border-radius: 20px;
 	border: 1px solid #20D392;
 	background-color: #20D392;
@@ -77,6 +82,7 @@ h2 {
 }
 
 #signIn {
+	font-family: "Verdana";
     border-radius: 20px;
 	border: 1px solid #20D392;
 	background-color: #20D392;
@@ -104,6 +110,7 @@ h2 {
 
 
 .formulario {
+	font-family: "Verdana";
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -115,6 +122,7 @@ h2 {
 }
 
 #inpunt {
+	font-family: "Verdana";
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
@@ -123,6 +131,7 @@ h2 {
 }
 
 .container {
+	font-family: "Verdana";
     margin-top: 5%;
 	background-color: #fff;
 	border-radius: 10px;
@@ -137,6 +146,7 @@ h2 {
 }
 
 .form-container {
+	font-family: "Verdana";
 	position: absolute;
 	top: 0;
 	height: 100%;
@@ -144,6 +154,7 @@ h2 {
 }
 
 .sign-in-container {
+	font-family: "Verdana";
 	left: 0;
 	width: 50%;
 	z-index: 2;
@@ -215,6 +226,7 @@ h2 {
 }
 
 .overlay-panel {
+	font-family: "Verdana";
 	position: absolute;
 	display: flex;
 	align-items: center;
@@ -262,6 +274,7 @@ h2 {
 }
 
 footer {
+	font-family: "Verdana";
     background-color: #222;
     color: #fff;
     font-size: 14px;
