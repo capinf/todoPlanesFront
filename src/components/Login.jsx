@@ -158,7 +158,7 @@ export function Login () {
 			<input required id="inpunt" ref={passwordRef} type="password" placeholder="Contraseña" />
 			<input required id="inpunt" ref={password2Ref} type="password" placeholder="Repetir Contraseña" />
 			<input required id="inpunt" ref={telRef} type="number" placeholder="Telefono" />
-			<label><input required type="checkbox" id="cbox1" value="first_checkbox"  /> Aceptas <a href="">terminos y condiciones</a> </label><br></br>
+			<label><input required type="checkbox" id="cbox1" value="first_checkbox"  /> Aceptas <a href="/terms">terminos y condiciones</a> </label><br></br>
 			<button type="submit" id="luisbutton">Registrarse</button>
 		</form>
 	</div>
