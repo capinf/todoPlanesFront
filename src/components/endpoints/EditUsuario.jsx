@@ -27,7 +27,7 @@ export function EditUsuario() {
           console.log('Los datos enviados son', datos);
 
           if (datos && datos.length > 0) {
-              const usuario = datos (id);
+              const usuario = datos[(id)];
               console.log('Nombre de usuario:', usuario.username);
               console.log('ID de usuario:', id);
 
