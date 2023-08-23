@@ -34,7 +34,7 @@ export function EditUsuario(){
           console.log('los datos enviados son', datos);
   
           if (datos && datos.length > 0) {
-              const usuario = datos[0];
+              const usuario = datos[1];
               console.log('el nombre de usuario es', usuario.username);
   
               setusername(usuario.username);
