@@ -174,6 +174,23 @@ export function UpdateUsuario(id, datos){
     
 }
 
+// ELIMINAR PUBLICACION // 
+export function EliminarPublicacion(nombrePlan, datos){ 
+ 
+    const requestOptions={
+        method: 'Delete',
+        headers: {
+            'Content-Type': 'application/json',
+           
+
+        },
+        body: JSON.stringify(datos)
+    };
+    fetch(`${API_URL}/eliminar_publicacion/${nombrePlan}`, requestOptions)
+    
+}
+
+
 //TRAER DATOS DE TABLA PLANES//
 // ENSAMBLAR SEGUN CORRESPONDA
 export async function getPlanesAPI(datoSearch){

@@ -14,6 +14,7 @@ export function EditUsuario(){
     const [apellido_nombre, setapellido_nombre] = useState('');
     const [telefono, setelefono] = useState('');
     const [rol, setrol] = useState('');
+    const [nombrePlan, setnombrePlan] = useState('');
     const {id} = useParams();
 
 
@@ -35,6 +36,7 @@ export function EditUsuario(){
             setusername(datos[0].username)
             setapellido_nombre(datos[0].apellido_nombre)
             setrol(datos[0].rol)
+            setnombrePlan(datos[0].nombrePlan)
         }
 
         
@@ -47,7 +49,8 @@ export function EditUsuario(){
                 username: username,
                 apellido_nombre: apellido_nombre,
                 telefono: telefono,
-                rol: rol
+                rol: rol,
+                formulario: nombrePlan
               };
               
               API.UpdateUsuario(id,datos_usuario)
@@ -127,6 +130,15 @@ export function EditUsuario(){
                                    
                     </select>
                     <small id="helpId" className="text-muted">&nbsp;</small>
+                    </div>
+                    <div className="form-group col-4" >
+                      <label for="">Formularios</label>
+                      <input
+                      readOnly 
+                      type="text"
+                       value={nombrePlan} 
+                      name="" id="" className="form-control bg-dark text-white" placeholder="" aria-describedby="helpId"/>
+                      <small id="helpId" className="text-muted">&nbsp;</small>
                     </div>
     
             
