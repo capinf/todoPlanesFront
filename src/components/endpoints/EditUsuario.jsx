@@ -23,7 +23,7 @@ export function EditUsuario(){
 
     useEffect(()=>{
 
-       trae_datos(id)
+       trae_datos()
     },[])
 
 
