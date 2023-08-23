@@ -12,7 +12,7 @@ export function EditUsuario(){
 
     const [username, setusername] = useState('');
     const [apellido_nombre, setapellido_nombre] = useState('');
-    const [telefono, setelefono] = useState('');
+    const [telefono, settelefono] = useState('');
     const [rol, setrol] = useState('');
     const [nombrePlan, setnombrePlan] = useState('');
     const {id} = useParams();
@@ -27,18 +27,28 @@ export function EditUsuario(){
     },[])
 
 
-    const trae_datos = async ()=>{
-        console.log("el id del usuario es,",id)
-        const datos= await API.getUsuario(id);
-        console.log(id)
-        console.log('los datos enviados son',datos[0].username)
-      
-            setusername(datos[0].username)
-            setapellido_nombre(datos[0].apellido_nombre)
-            setelefono(datos[0].telefono)
-            setrol(datos[0].rol)
-            setnombrePlan(datos[0].nombrePlan)
-        }
+    const trae_datos = async () => {
+      try {
+          console.log("el id del usuario es,", id);
+          const datos = await API.getUsuario(id);
+          console.log('los datos enviados son', datos);
+  
+          if (datos && datos.length > 0) {
+              const usuario = datos[0];
+              console.log('el nombre de usuario es', usuario.username);
+  
+              setusername(usuario.username);
+              setapellido_nombre(usuario.apellido_nombre);
+              settelefono(usuario.telefono);
+              setrol(usuario.rol);
+              setnombrePlan(usuario.nombrePlan);
+          } else {
+              console.log('No se encontraron datos para el usuario');
+          }
+      } catch (error) {
+          console.log('Error al obtener los datos', error);
+      }
+  }
 
         
 
