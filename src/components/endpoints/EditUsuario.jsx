@@ -34,16 +34,15 @@ export function EditUsuario(){
           console.log('los datos enviados son', datos);
   
           if (datos && datos.length > 0) {
-              datos.forEach(usuario => {
-                  console.log('Nombre de usuario:', usuario.username);
-                  console.log('ID de usuario:', usuario.id);
+              const usuario = datos[0];
+              console.log('Nombre de usuario:', usuario.username);
+              console.log('ID de usuario:', id);  // Utilizar el ID capturado
   
-                  setusername(usuario.username);
-                  setapellido_nombre(usuario.apellido_nombre);
-                  settelefono(usuario.telefono);
-                  setrol(usuario.rol);
-                  setnombrePlan(usuario.nombrePlan);
-              });
+              setusername(usuario.username);
+              setapellido_nombre(usuario.apellido_nombre);
+              settelefono(usuario.telefono);
+              setrol(usuario.rol);
+              setnombrePlan(usuario.nombrePlan);
           } else {
               console.log('No se encontraron datos para el usuario');
           }
