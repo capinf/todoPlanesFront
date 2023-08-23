@@ -149,7 +149,7 @@ export async function getUsuarioById(id){
       };
     console.log("hola")
     try{
-        const response = await fetch(`${API_URL}/usuarios/id`,requestOptions);
+        const response = await fetch(`${API_URL}/usuarios/${id}`,requestOptions);
         const data = await response.json();
         console.log(data)
         return data;
