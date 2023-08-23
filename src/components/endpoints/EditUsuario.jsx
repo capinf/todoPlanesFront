@@ -28,7 +28,7 @@ export function EditUsuario() {
 
           if (datos && datos.length > 0) {
               const usuario = datos[0];
-              console.log('Nombre de usuario:', usuario.username);
+              console.log('Nombre de usuario:', usuario.id);
               console.log('ID de usuario:', id);
 
               setusername(usuario.username);
