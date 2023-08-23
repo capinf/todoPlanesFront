@@ -45,6 +45,14 @@ export function CargaPlan() {
 
   </div>
 </div>
+<footer className='footerHome'>
+    <button className='whatsapplogoHome'>
+      <a href="https://wa.link/2mwgso"><img src="/img/whatsappfree.png" alt="" width="100px" height="100px" /></a>
+      </button>
+      <div>
+          <Footer/>
+      </div>
+    </footer>
       </>
     )
   }
