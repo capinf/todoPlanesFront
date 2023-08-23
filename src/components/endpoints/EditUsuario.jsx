@@ -29,7 +29,7 @@ export function EditUsuario(){
 
     const trae_datos = async ()=>{
         console.log("el id del usuario es,",id)
-        const datos= await API.getUsuario(id);
+        const datos= await API.getUsuarioById(id);
         console.log(id)
         console.log('los datos enviados son',datos[0].username)
       
