@@ -4,7 +4,7 @@ import * as API from '../../servicios/servicios'
 
 /// editar usuario ///
 
-export function EditUsuario(){
+export function EditUsuario({id}){
 
    
     const [mensajeSuccess, setmensajeSuccess] = useState('')
