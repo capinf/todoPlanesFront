@@ -4,40 +4,33 @@ import * as API from '../../servicios/servicios'
 
 /// editar usuario ///
 
-export function EditUsuario({id}){
+export function EditUsuario() {
+  const [mensajeSuccess, setmensajeSuccess] = useState('');
+  const [mensajeError, setMensajeError] = useState('');
 
-   
-    const [mensajeSuccess, setmensajeSuccess] = useState('')
-    const [mensajeError, setMensajeError] = useState('')
+  const [username, setusername] = useState('');
+  const [apellido_nombre, setapellido_nombre] = useState('');
+  const [telefono, settelefono] = useState('');
+  const [rol, setrol] = useState('');
+  const [nombrePlan, setnombrePlan] = useState('');
 
-    const [username, setusername] = useState('');
-    const [apellido_nombre, setapellido_nombre] = useState('');
-    const [telefono, settelefono] = useState('');
-    const [rol, setrol] = useState('');
-    const [nombrePlan, setnombrePlan] = useState('');
-    const {id} = useParams();
+  const { id } = useParams(); // Obtener el ID del usuario de los parámetros de la ruta
 
+  useEffect(() => {
+      trae_datos();
+  }, []);
 
-
-
-
-    useEffect(()=>{
-
-       trae_datos()
-    },[])
-
-
-    const trae_datos = async () => {
+  const trae_datos = async () => {
       try {
-          console.log("el id del usuario es,", id);
-          const datos = await API.getUsuario(id);
-          console.log('los datos enviados son', datos);
-  
+          console.log("El ID del usuario es,", id);
+          const datos = await API.getUsuario(id); // Supongo que tu API tiene un método getUsuario para obtener los datos
+          console.log('Los datos enviados son', datos);
+
           if (datos && datos.length > 0) {
               const usuario = datos[0];
               console.log('Nombre de usuario:', usuario.username);
-              console.log('ID de usuario:', id);  // Utilizar el ID capturado
-  
+              console.log('ID de usuario:', id);
+
               setusername(usuario.username);
               setapellido_nombre(usuario.apellido_nombre);
               settelefono(usuario.telefono);
