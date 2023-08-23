@@ -101,7 +101,7 @@ export function EditUsuario() {
                       <input
                       readOnly 
                       type="text"
-                       value={username = id} 
+                       value={username} 
                       name="" id="" className="form-control bg-dark text-white" placeholder="" aria-describedby="helpId"/>
                       <small id="helpId" className="text-muted">&nbsp;</small>
                     </div>
