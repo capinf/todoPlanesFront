@@ -25,13 +25,14 @@ export function EditUsuario() {
         console.log("El ID del usuario es,", id);
         const datos = await API.getUsuario(); // Obtener los datos, ajusta esto según tu implementación
         console.log('Los datos enviados son', datos);
-        const datos2 = await API.getFormulariobyId();
-        console.log('El formulario encontrado es', datos2)
+         // Obtener datos del formulario utilizando el mismo ID
+         const datosFormulario = await API.getFormulariobyId();
+         console.log('Los datos de formulario son', datosFormulario);
+ 
 
-        if (datos, datos2 && datos.length > 0) {
+        if (datos && datos.length > 0) {
             const usuario = datos.find(data => data.id === parseInt(id)); // Convertir id a número y comparar
             console.log('Usuario encontrado:', usuario);
-            console.log('Formulario encontrado:', nombrePlan);
 
             if (usuario) {
                 console.log('Nombre de usuario:', usuario.username);
@@ -42,6 +43,15 @@ export function EditUsuario() {
                 settelefono(usuario.telefono);
                 setrol(usuario.rol);
                 setnombrePlan(usuario.nombrePlan);
+            }
+            if (datosFormulario && datosFormulario.length > 0) {
+              const formulario = datosFormulario[0];
+              console.log('Formulario encontrado:', formulario);
+  
+              // Aquí obtenemos el valor de la columna "nombrePlan"
+              const nombrePlanFormulario = formulario.nombrePlan;
+              console.log('Nombre del plan en el formulario:', nombrePlanFormulario);
+              setnombrePlan(nombrePlanFormulario);
             } else {
                 console.log('No se encontraron datos para el usuario con el ID capturado');
             }

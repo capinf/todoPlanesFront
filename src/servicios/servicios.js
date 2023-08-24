@@ -175,7 +175,7 @@ export function UpdateUsuario(id, datos){
 }
 
 // ELIMINAR PUBLICACION // 
-export function EliminarPublicacion(nombrePlan, datos){ 
+export function EliminarPublicacion(idFormulario, datos){ 
  
     const requestOptions={
         method: 'Delete',
@@ -186,7 +186,7 @@ export function EliminarPublicacion(nombrePlan, datos){
         },
         body: JSON.stringify(datos)
     };
-    fetch(`${API_URL}/eliminar_publicacion/${nombrePlan}`, requestOptions)
+    fetch(`${API_URL}/eliminar_publicacion/${idFormulario}`, requestOptions)
     
 }
 
