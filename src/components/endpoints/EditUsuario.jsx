@@ -167,7 +167,7 @@ export function EditUsuario() {
                        value={nombrePlan} 
                       name="" id="" className="form-control bg-dark text-white" placeholder="" aria-describedby="helpId"/>
                       <small id="helpId" className="text-muted">&nbsp;</small>
-                      <button onClick={()=>elminarFormulario(username.id)} type="button" className="btn btn-outline-primary">Alta</button>
+                      <button onClick={()=>elminarFormulario(username.id)} type="button" className="btn btn-outline-primary">Eliminar</button>
                     </div>
     
             
