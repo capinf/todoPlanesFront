@@ -21,28 +21,34 @@ export function EditUsuario() {
   }, []);
 
   const trae_datos = async () => {
-      try {
-          console.log("El ID del usuario es,", id);
-          const datos = await API.getUsuario(id); // Supongo que tu API tiene un método getUsuario para obtener los datos
-          console.log('Los datos enviados son', datos);
+    try {
+        console.log("El ID del usuario es,", id);
+        const datos = await API.getUsuario(id);
+        console.log('Los datos enviados son', datos);
 
-          if (datos && datos.length > 0) {
-              const usuario = datos[0];
-              console.log('Nombre de usuario:', usuario.username);
-              console.log('ID de usuario:', id);
+        if (datos && datos.length > 0) {
+            const usuario = datos.find(data => data.id === id); // Buscar el usuario con el ID capturado
+            console.log('Usuario encontrado:', usuario);
 
-              setusername(usuario.username);
-              setapellido_nombre(usuario.apellido_nombre);
-              settelefono(usuario.telefono);
-              setrol(usuario.rol);
-              setnombrePlan(usuario.nombrePlan);
-          } else {
-              console.log('No se encontraron datos para el usuario');
-          }
-      } catch (error) {
-          console.log('Error al obtener los datos', error);
-      }
-  }
+            if (usuario) {
+                console.log('Nombre de usuario:', usuario.username);
+                console.log('ID de usuario:', id);
+
+                setusername(usuario.username);
+                setapellido_nombre(usuario.apellido_nombre);
+                settelefono(usuario.telefono);
+                setrol(usuario.rol);
+                setnombrePlan(usuario.nombrePlan);
+            } else {
+                console.log('No se encontraron datos para el usuario con el ID capturado');
+            }
+        } else {
+            console.log('No se encontraron datos para el usuario');
+        }
+    } catch (error) {
+        console.log('Error al obtener los datos', error);
+    }
+}
 
         
 
