@@ -25,10 +25,13 @@ export function EditUsuario() {
         console.log("El ID del usuario es,", id);
         const datos = await API.getUsuario(); // Obtener los datos, ajusta esto según tu implementación
         console.log('Los datos enviados son', datos);
+        const datos2 = await API.getFormulariobyId();
+        console.log('El formulario encontrado es', datos2)
 
-        if (datos && datos.length > 0) {
+        if (datos, datos2 && datos.length > 0) {
             const usuario = datos.find(data => data.id === parseInt(id)); // Convertir id a número y comparar
             console.log('Usuario encontrado:', usuario);
+            console.log('Formulario encontrado:', nombrePlan);
 
             if (usuario) {
                 console.log('Nombre de usuario:', usuario.username);
@@ -84,7 +87,7 @@ export function EditUsuario() {
           };
 
           const elminarFormulario = async(id)=>{
-            const user = await API.EliminarPublicacion(id)
+            const user = API.EliminarPublicacion(id)
             if(user.status){
                 setmensajeSuccess(user.mensaje)
                 setTimeout(()=>{
