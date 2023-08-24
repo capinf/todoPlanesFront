@@ -60,9 +60,9 @@ export function UpdateFormulario(idFormulario, datos){
     
 }
 
-export async function getFormulariobyId(idFormulario){
+export async function getFormulariobyId(id){
     try{
-        const response = await fetch(`${API_URL}/formulario/${idFormulario}`);
+        const response = await fetch(`${API_URL}/formulario/${id}`);
         const data = await response.json();
         console.log(data)
         return data;
