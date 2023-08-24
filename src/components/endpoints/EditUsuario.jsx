@@ -50,6 +50,7 @@ export function EditUsuario() {
     }
 }
 
+
         
 
 
@@ -81,6 +82,22 @@ export function EditUsuario() {
             }
             
           };
+
+          const elminarFormulario = async(id)=>{
+            const user = await API.EliminarPublicacion(id)
+            if(user.status){
+                setmensajeSuccess(user.mensaje)
+                setTimeout(()=>{
+                    setmensajeSuccess('')
+                    window.location.reload(true)
+                }, 3000)
+            }else{
+                setmensajeError(user.mensaje)
+                setTimeout(()=>{
+                    setmensajeError('')
+                }, 4000)
+            }
+        }
 
           return(
             <div className="card table bg-dark text-white">
@@ -150,6 +167,7 @@ export function EditUsuario() {
                        value={nombrePlan} 
                       name="" id="" className="form-control bg-dark text-white" placeholder="" aria-describedby="helpId"/>
                       <small id="helpId" className="text-muted">&nbsp;</small>
+                      <button onClick={()=>elminarFormulario(username.id)} type="button" className="btn btn-outline-primary">Alta</button>
                     </div>
     
             
