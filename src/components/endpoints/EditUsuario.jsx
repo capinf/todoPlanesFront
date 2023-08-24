@@ -23,11 +23,11 @@ export function EditUsuario() {
   const trae_datos = async () => {
     try {
         console.log("El ID del usuario es,", id);
-        const datos = await API.getUsuario(id);
+        const datos = await API.getUsuario(); // Obtener los datos, ajusta esto según tu implementación
         console.log('Los datos enviados son', datos);
 
         if (datos && datos.length > 0) {
-            const usuario = datos.find(data => data.id === id); // Buscar el usuario con el ID capturado
+            const usuario = datos.find(data => data.id === parseInt(id)); // Convertir id a número y comparar
             console.log('Usuario encontrado:', usuario);
 
             if (usuario) {
