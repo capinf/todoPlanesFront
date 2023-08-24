@@ -42,7 +42,7 @@ export function EditUsuario() {
                 setapellido_nombre(usuario.apellido_nombre);
                 settelefono(usuario.telefono);
                 setrol(usuario.rol);
-                setnombrePlan(usuario.nombrePlan);
+                
             }
             if (datosFormulario && datosFormulario.length > 0) {
               const formulario = datosFormulario[0];
