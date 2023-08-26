@@ -3,6 +3,13 @@
     align-items: center;
     background-color: black;
 }
+.Card1 {
+  padding-bottom: 5%;
+  width: 100%;
+  align-items: center;
+  background-color: black;
+}
+
 
 .carta-autos {
     border: 10px solid #000000;

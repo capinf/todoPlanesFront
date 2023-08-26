@@ -12,14 +12,14 @@ export function PlanNormal () {
 
     return (
         <>
-        <div className='Card'>
+        <div className='Card1'>
       <div className='carta-autos'>
         <ul className='gridAutos'>
         {
         planesNormal.map(plan =>(
 
             <li className='card-list-normal' key={plan.id}>
-            <img className='card-image' src={`/${plan.imgPath}`} alt="" />
+            <img className='card-image' src={plan.imgPath} alt="" />
             <h1 className='title'>{plan.nombrePlan}</h1>
             <div className="card-details">
             <p className='infos'>Tipo de Plan: {plan.tipoPlan}</p>
