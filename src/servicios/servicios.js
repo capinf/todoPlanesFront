@@ -45,7 +45,7 @@ export async function Registro(datos){
 
 /// Editar Formulario ///
 
-export function getFormulario(datos){
+export function getFormulario(){
     const token = JSON.parse(localStorage.getItem('token'));
     const requestOptions={
         method: 'PUT',
@@ -57,22 +57,6 @@ export function getFormulario(datos){
         body: JSON.stringify(datos)
     };
     fetch(`${API_URL}/formulario`, requestOptions)
-    
-}
-
-
-export function UpdateFormulario(idFormulario, datos){
-    const token = JSON.parse(localStorage.getItem('token'));
-    const requestOptions={
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-
-        },
-        body: JSON.stringify(datos)
-    };
-    fetch(`${API_URL}/edit_formulario/${idFormulario}`, requestOptions)
     
 }
 
