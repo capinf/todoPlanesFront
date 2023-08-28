@@ -45,7 +45,7 @@ export async function Registro(datos){
 
 /// Editar Formulario ///
 
-export function getFormulario(){
+export function getFormulario(datos){
     const token = JSON.parse(localStorage.getItem('token'));
     const requestOptions={
         method: 'PUT',
