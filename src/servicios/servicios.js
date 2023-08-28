@@ -45,6 +45,22 @@ export async function Registro(datos){
 
 /// Editar Formulario ///
 
+export function getFormulario(datos){
+    const token = JSON.parse(localStorage.getItem('token'));
+    const requestOptions={
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+
+        },
+        body: JSON.stringify(datos)
+    };
+    fetch(`${API_URL}/formulario`, requestOptions)
+    
+}
+
+
 export function UpdateFormulario(idFormulario, datos){
     const token = JSON.parse(localStorage.getItem('token'));
     const requestOptions={
@@ -69,6 +85,22 @@ export async function getFormulariobyId(id){
     }catch(error){
         console.log('Nuestro error', error);
     }
+}
+
+// ELIMINAR PUBLICACION // 
+export function EliminarPublicacion(idFormulario, datos){ 
+ 
+    const requestOptions={
+        method: 'Delete',
+        headers: {
+            'Content-Type': 'application/json',
+           
+
+        },
+        body: JSON.stringify(datos)
+    };
+    fetch(`${API_URL}/eliminar_publicacion/${idFormulario}`, requestOptions)
+    
 }
 
 /// ALTA Y BAJA USUARIOS ///
@@ -174,21 +206,7 @@ export function UpdateUsuario(id, datos){
     
 }
 
-// ELIMINAR PUBLICACION // 
-export function EliminarPublicacion(idFormulario, datos){ 
- 
-    const requestOptions={
-        method: 'Delete',
-        headers: {
-            'Content-Type': 'application/json',
-           
 
-        },
-        body: JSON.stringify(datos)
-    };
-    fetch(`${API_URL}/eliminar_publicacion/${idFormulario}`, requestOptions)
-    
-}
 
 
 //TRAER DATOS DE TABLA PLANES//

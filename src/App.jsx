@@ -13,6 +13,7 @@ import { useState, useEffect } from 'react'
 import TermsAndConditions from './components/TerminosYCondiciones'
 import { Usuarios } from './components/endpoints/edits'
 import { EditUsuario } from './components/endpoints/EditUsuario'
+import { Formularios } from './components/endpoints/Formularios'
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
       <Route path='/terms' element={<TermsAndConditions/>}></Route>
       <Route path='/usuario' element={<Usuarios/>}></Route>
       <Route path='/edit_usuarios/:id' element={<EditUsuario/>}></Route>
+      <Route path='/formulario' element={<Formularios/>}></Route>
       </Routes>
     </>
 

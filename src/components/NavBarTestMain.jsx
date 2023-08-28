@@ -27,6 +27,7 @@ export function NavBarTestMain () {
           <Nav.Link style={{color:"aquamarine"}} href="/cargaPlan">¡Quiero vender mi plan!</Nav.Link>
           <Nav.Link style={{color:"white"}} href="/cargaAutos">¡Subí tu auto!</Nav.Link>
           <Nav.Link style={{color:"aquamarine"}} href="/usuario">Usuarios</Nav.Link>
+          <Nav.Link style={{color:"aquamarine"}} href="/formulario">Formularios</Nav.Link>
         </Nav>
       </Navbar.Collapse>
             <div className="logo">
