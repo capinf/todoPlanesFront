@@ -15,7 +15,7 @@ export function Formularios(){
 
 
     useEffect(()=>{
-        API.getFormulario().then(nombreplan)
+        API.getFormulario().then()
     },[])
     
    
