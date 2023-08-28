@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import * as API from '../../servicios/servicios'
-//import { EditUsuario } from './EditUsuario'
+
 
 export function Formularios(){
 
@@ -15,7 +15,7 @@ export function Formularios(){
 
 
     useEffect(()=>{
-        API.getFormulario().then()
+        API.getFormulario().then(setNombreplan)
     },[])
     
    
@@ -87,7 +87,7 @@ export function Formularios(){
                             <td>
                             <div className="btn-group" role="group" aria-label="Basic example">
                             <button onClick={() =>eliminarform(formulario.idFormulario)} type="button" className="btn btn-outline-primary">Eliminar</button>
-                                
+                            
 
                                
                                 
