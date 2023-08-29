@@ -48,7 +48,7 @@ export async function Registro(datos){
 export function getFormulario(datos){
     const token = JSON.parse(localStorage.getItem('token'));
     const requestOptions={
-        method: 'PUT',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
