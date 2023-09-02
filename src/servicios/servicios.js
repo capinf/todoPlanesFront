@@ -45,20 +45,43 @@ export async function Registro(datos){
 
 /// Editar Formulario ///
 
-export function getFormulario(datos){
-    const token = JSON.parse(localStorage.getItem('token'));
-    const requestOptions={
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
+// export function getFormulario(datos){
+//     const token = JSON.parse(localStorage.getItem('token'));
+//     const requestOptions={
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             Authorization: `Bearer ${token}`,
 
-        },
-        body: JSON.stringify(datos)
-    };
-    fetch(`${API_URL}/formulario`, requestOptions)
+//         },
+//         body: JSON.stringify(datos)
+//     };
+//     fetch(`${API_URL}/formulario`, requestOptions)
     
-}
+// }
+
+export function getFormulario(datos) {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+  
+    // Devolver la promesa resultante de la solicitud fetch
+    return fetch(`${API_URL}/formulario`, requestOptions)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se pudo obtener el formulario.');
+        }
+        return response.json(); // Devolver los datos de respuesta como promesa
+      })
+      .catch(error => {
+        throw error; // Propagar el error para que sea manejado en el componente
+      });
+  }
 
 export async function getFormulariobyId(id){
     try{
@@ -72,41 +95,88 @@ export async function getFormulariobyId(id){
 }
 
 // ELIMINAR PUBLICACION // 
-export function EliminarPublicacion(idFormulario, datos){ 
+export async function EliminarPublicacion(id) {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const requestOptions = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+  
+    try {
+      const response = await fetch(`${API_URL}/eliminar_publicacion/${id}`, requestOptions);
+      const data = await response.json();
+  
+      if (response.ok) {
+        return { status: true, mensaje: 'La publicación se eliminó correctamente' };
+      } else {
+        return { status: false, mensaje: 'No se pudo eliminar la publicación' };
+      }
+    } catch (error) {
+      return { status: false, mensaje: 'Ocurrió un error al eliminar la publicación: ' + error.message };
+    }
+  }
+  
+// export function EliminarPublicacion(idFormulario, datos){ 
  
-    const requestOptions={
-        method: 'Delete',
-        headers: {
-            'Content-Type': 'application/json',
+//     const requestOptions={
+//         method: 'Delete',
+//         headers: {
+//             'Content-Type': 'application/json',
            
 
-        },
-        body: JSON.stringify(datos)
-    };
-    fetch(`${API_URL}/eliminar_publicacion/${idFormulario}`, requestOptions)
+//         },
+//         body: JSON.stringify(datos)
+//     };
+//     fetch(`${API_URL}/eliminar_publicacion/${idFormulario}`, requestOptions)
     
-}
+// }
 
 /// ALTA Y BAJA USUARIOS ///
 
-export async function getUsuario(){
-    const token = JSON.parse(localStorage.getItem('token'));
-    console.log(token)
-    const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${token}`,
-        },
-      };
+// export async function getUsuario(){
+//     const token = JSON.parse(localStorage.getItem('token'));
+//     console.log(token)
+//     const requestOptions = {
+//         headers: {
+//           'Content-Type': 'application/json',
+//           authorization: `Bearer ${token}`,
+//         },
+//       };
       
-    try{
-        const response = await fetch(`${API_URL}/usuarios`, requestOptions);
-        const data = await response.json();
-        return data;
-    }catch(error){
-        console.log('Nuestro error', error);
-    }
-}
+//     try{
+//         const response = await fetch(`${API_URL}/usuarios`, requestOptions);
+//         const data = await response.json();
+//         return data;
+//     }catch(error){
+//         console.log('Nuestro error', error);
+//     }
+// }
+export function getUsuario(datos) {
+    const token = JSON.parse(localStorage.getItem('token'));
+    const requestOptions = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    };
+  
+    // Devolver la promesa resultante de la solicitud fetch
+    return fetch(`${API_URL}/usuarios`, requestOptions)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se pudo obtener el formulario.');
+        }
+        return response.json(); // Devolver los datos de respuesta como promesa
+      })
+      .catch(error => {
+        throw error; // Propagar el error para que sea manejado en el componente
+      });
+  }
+
 
 
 

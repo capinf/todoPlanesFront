@@ -14,11 +14,18 @@ export function Formularios(){
     const [mensajeSuccess, setmensajeSuccess] = useState('')
 
 
-    useEffect(()=>{
-        API.getFormulario().then(setNombreplan)
-    },[])
+    // useEffect(()=>{
+    //     API.getFormulario().then(setNombreplan)
+    // },[])
     
-   
+    useEffect(() => {
+        API.getFormulario().then(data => {
+          setNombreplan(data); // Aquí puedes establecer los datos en tu estado
+        }).catch(error => {
+          setmensajeError('Error al obtener el formulario: ' + error.message);
+        });
+      }, []);
+      
 
 
 
@@ -29,15 +36,14 @@ export function Formularios(){
 
         const user = await API.EliminarPublicacion(id)
         if(user.status){
-            
             setmensajeSuccess(user.mensaje)
             setTimeout(()=>{
-                setmensajeSuccess('Se elimino la publicacion')
+                setmensajeSuccess('')
                 window.location.reload(true)
             }, 3000)
 
         }else{
-            setmensajeError(user.mensaje)
+            setmensajeError('No se pudo eliminar la publicacion')
             setTimeout(()=>{
                 setmensajeError('No se pudo eliminar la publicacion')
             }, 4000)
