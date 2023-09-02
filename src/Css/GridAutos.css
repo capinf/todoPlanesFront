@@ -4,6 +4,13 @@
     background-color: black;
 }
 
+.Card1 {
+  width: 100%;
+  align-items: center;
+  background-color: black;
+  padding-bottom: 5%;
+}
+
 .carta-autos {
     border: 10px solid #000000;
     border-radius: 8px;

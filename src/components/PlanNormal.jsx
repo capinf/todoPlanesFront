@@ -12,7 +12,7 @@ export function PlanNormal () {
 
     return (
         <>
-        <div className='Card'>
+        <div className='Card1'>
       <div className='carta-autos'>
         <ul className='gridAutos'>
         {
