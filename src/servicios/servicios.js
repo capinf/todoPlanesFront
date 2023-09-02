@@ -168,7 +168,7 @@ export function getUsuario(datos) {
     return fetch(`${API_URL}/usuarios`, requestOptions)
       .then(response => {
         if (!response.ok) {
-          throw new Error('No se pudo obtener el formulario.');
+          throw new Error('No se pudo obtener el usuario.');
         }
         return response.json(); // Devolver los datos de respuesta como promesa
       })

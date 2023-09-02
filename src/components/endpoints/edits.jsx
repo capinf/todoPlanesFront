@@ -14,9 +14,14 @@ export function Usuarios(){
     
 
 
-    useEffect(()=>{
-        API.getUsuario().then(setUsuario)
-    },[])
+    useEffect(() => {
+        API.getUsuario().then(data => {
+            setUsuario(data); // Aquí puedes establecer los datos en tu estado
+        }).catch(error => {
+          setmensajeError('Error al obtener el usuario: ' + error.message);
+        });
+      }, []);
+      
     
    
 
